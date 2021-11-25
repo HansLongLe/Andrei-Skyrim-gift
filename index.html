@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <div class="frontImgDiv" id="frontImgId"></div>
+    <div class="descriptionDiv" id="decriptionId"></div>
+    <div class="backImgDiv" id="backImgId">
+        <div class="showCode" onclick="showCode()">
+            <h1 id="title1">Show code</h1>
+            <h2 id="title2">W607R-7L09Y-K8QYQ</h2>
+        </div>
+        <div class="darkerBackground"></div>
+    </div>
+    <a id="scrollButton" href="#decriptionId" onclick="scrollClick()">
+        <img class="scrollButton" src="img/white-down-arrow-png-2.png" alt="scroll button">
+    </a>
+
+
+    <script>
+        function scrollClick() {
+            const scroll = document.getElementById("scrollButton").getAttribute("href");
+            if (scroll == "#frontImgId") {
+                document.getElementById("scrollButton").setAttribute("href", "#decriptionId")
+            } else if (scroll == "#decriptionId") {
+                document.getElementById("scrollButton").setAttribute("href", "#backImgId")
+            } else if (scroll == "#backImgId") {
+                document.getElementById("scrollButton").setAttribute("href", "#frontImgId")
+            }
+
+        }
+
+        function showCode() {
+            document.getElementById("title1").style.display = "none";
+            document.getElementById("title2").style.display = "block";
+        }
+
+    </script>
+</body>
+
+</html>
